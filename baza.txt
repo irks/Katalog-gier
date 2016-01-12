@@ -1,0 +1,12 @@
+1 Wiedzmin_3_Dziki_Gon RPG CD_Projekt_RED DVD 100.00 PC,PS4,XONE
+2 Gothic_II RPG Piranha_Bytes DVD 30.00 PC
+3 Grand_Theft_Auto_V TPP Rockstar_Games DVD 120.00 PC,PS3,PS4,Xbox
+4 Wiedzmin_2_Zabojcy_krolow RPG CD_Projekt_RED DVD 40.00 PC,Xbox360
+5 F1_2015 Wyscigi Codemasters Blu-ray 140.00 PC,PS4,XONE
+6 War_Thunder Symulator Gaijin_Entertainment Internet 0.00 PC
+7 FIFA_15 Sportowa EA_Sports DVD 80.00 PC,XBOX,PS3,PS4
+8 Anno_1404 Strategia Ubisoft DVD 20.00 PC
+9 Europa_Universalis_IV Strategia Paradox_Interactive DVD 100.00 PC
+10 Battlefield_3 FPS EA DVD 50.00 PC,PS3,Xbox360
+11 The_Elder_Scrolls_V:_Skyrim RPG Bethesda_Softworks DVD 60.00 PC,PS3,XBOX_360
+12 Assassin's_Creed_III Akcji Ubisoft DVD 40.00 PC,PS3,_XBOX_360
