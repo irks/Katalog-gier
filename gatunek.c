@@ -43,7 +43,7 @@ void interfejs_gatunek(struct gra *nowy) {
             case 3:
                 puts("\nPodaj gatunek (pusty wiersz powoduje powrot do menu gatunku):");
 
-		if (gets(wejscie)==NULL || wejscie[0]=='\0' || wejscie[0]=='\t' || wejscie[0]==' ')
+		if (fgets(wejscie,MAX,stdin)==NULL || wejscie[0]=='\0' || wejscie[0]=='\t' || wejscie[0]==' ' && wejscie[0] != '\n')
                 	break;
                 stworz_gatunek(wejscie);
                 break;
@@ -163,7 +163,7 @@ void edytuj_gatunek(int id_gat_do_edyc) {
     }
     char wejscie[MAX];
     puts("Podaj nowa nazwe gatunku ktory edytujesz(pusty wiersz powoduje powrot do menu gatunku):");
-    if (gets(wejscie) != NULL && wejscie[0] != '\0' && wejscie[0] != '\t' && wejscie[0] != ' ') {
+    if (fgets(wejscie,MAX,stdin) != NULL && wejscie[0] != '\0' && wejscie[0] != '\t' && wejscie[0] != ' ' && wejscie[0] != '\n') {
         strcpy(biezacy->nazwa, wejscie);
     	puts("\nZaktualizowano dane\n");
 	}

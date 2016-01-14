@@ -91,21 +91,21 @@ void wczytywanie(void) {
     struct gra *nowy;
     char wejscie[MAX];
     puts("\nPodaj tytul gry (pusty wiersz powoduje powrot do menu):");
-    while (gets(wejscie) != NULL && wejscie[0] != '\0' && wejscie[0] != '\t' && wejscie[0] != ' ') {
+    while (fgets(wejscie,MAX,stdin) != NULL && wejscie[0] != '\0' && wejscie[0] != '\t' && wejscie[0] != ' ' && wejscie[0] != '\n') {
        nowy = stworz_element();
        strcpy(nowy->tytul, wejscie);
        puts("\nPodaj producenta gry:");
-       gets(wejscie);
+       fgets(wejscie,MAX,stdin);
        while(wejscie[0]=='\0' || wejscie[0]=='\t' || wejscie[0]==' ')
-            gets(wejscie);
+            fgets(wejscie,MAX,stdin);
        strcpy(nowy->producent, wejscie);
 
        interfejs_gatunek(nowy);
 
        puts("\nPodaj nosnik:");
-       gets(wejscie);
+       fgets(wejscie,MAX,stdin);
        while(wejscie[0]=='\0' || wejscie[0]=='\t' || wejscie[0]==' ')
-            gets(wejscie);
+            fgets(wejscie,MAX,stdin);
        strcpy(nowy->nosnik, wejscie);
        puts("\nPodaj cene:");
 	while((scanf("%f", &nowy->cena))!=1) {
@@ -116,9 +116,9 @@ void wczytywanie(void) {
        while(getchar() != '\n')
             continue;
        puts("\nPodaj platforme:");
-       gets(wejscie);
+       fgets(wejscie,MAX,stdin);
        while(wejscie[0]=='\0' || wejscie[0]=='\t' || wejscie[0]==' ')
-            gets(wejscie);
+            fgets(wejscie,MAX,stdin);
        strcpy(nowy->platforma, wejscie);
        puts("\nPodaj nastepny tytul gry (pusty wiersz powoduje powrot do menu):");
     }
@@ -130,19 +130,19 @@ void edycja(struct gra * do_edycji) {
         return;
     puts("\nPodaj tytul gry (pusty wiersz powoduje powrot do menu):");
 
-    if (gets(wejscie) != NULL && wejscie[0] != '\0' && wejscie[0] != '\t' && wejscie[0] != ' ') {
+    if (fgets(wejscie,MAX,stdin) != NULL && wejscie[0] != '\0' && wejscie[0] != '\t' && wejscie[0] != ' ' && wejscie[0] != '\n') {
        strcpy(do_edycji->tytul, wejscie);
        puts("\nPodaj producenta gry:");
-       gets(wejscie);
+       fgets(wejscie,MAX,stdin);
        while(wejscie[0]=='\0' || wejscie[0]=='\t' || wejscie[0]==' ')
-            gets(wejscie);
+            fgets(wejscie,MAX,stdin);
        strcpy(do_edycji->producent, wejscie);
        interfejs_gatunek(do_edycji);
 
        puts("\nPodaj nosnik:");
-       gets(wejscie);
+       fgets(wejscie,MAX,stdin);
        while(wejscie[0]=='\0' || wejscie[0]=='\t' || wejscie[0]==' ')
-            gets(wejscie);
+            fgets(wejscie,MAX,stdin);
        strcpy(do_edycji->nosnik, wejscie);
        puts("\nPodaj cene:");
 	while((scanf("%f", &do_edycji->cena))!=1) {
@@ -153,9 +153,9 @@ void edycja(struct gra * do_edycji) {
        while(getchar() != '\n')
             continue;
        puts("\nPodaj platforme:");
-       gets(wejscie);
+       fgets(wejscie,MAX,stdin);
        while(wejscie[0]=='\0' || wejscie[0]=='\t' || wejscie[0]==' ')
-            gets(wejscie);
+            fgets(wejscie,MAX,stdin);
        strcpy(do_edycji->platforma, wejscie);
     }
     puts("\nZaktualizowano dane\n");

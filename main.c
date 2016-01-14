@@ -59,13 +59,13 @@ while(1) {
                 continue;
             if (pocz == NULL) {
                 puts("\nBaza jest pusta!");
-                return; }
+                break; }
             biezacy = pocz;
             while (biezacy->id != delete_id) {
                 biezacy = biezacy->nast;
                 if (biezacy == NULL) {
                     puts("\nNie ma takiego elementu");
-                    return;
+                    break;
                 }
             }
             usun_element(biezacy);
@@ -113,7 +113,7 @@ while(1) {
             }
 
             if (pocz == NULL)
-                return;
+                break;
             biezacy = pocz;
             while(biezacy != NULL) {
                 fprintf(w_zapisz,"%d ",biezacy->id);
