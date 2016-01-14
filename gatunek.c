@@ -7,6 +7,7 @@
 extern struct gatunek *poczatek;
 
 void interfejs_gatunek(struct gra *nowy) {
+    char c;
     char wejscie[MAX];
     int id_gatunku, menu_gatunku;
     while(1) {
@@ -43,8 +44,8 @@ void interfejs_gatunek(struct gra *nowy) {
             case 3:
                 puts("\nPodaj gatunek (pusty wiersz powoduje powrot do menu gatunku):");
 
-		if (fgets(wejscie,MAX,stdin)==NULL || wejscie[0]=='\0' || wejscie[0]=='\t' || wejscie[0]==' ' && wejscie[0] != '\n')
-                	break;
+		if (gets(wejscie)==NULL || wejscie[0]=='\0' || wejscie[0]=='\t' || wejscie[0]==' ' && wejscie[0] != '\n')
+                	break;                
                 stworz_gatunek(wejscie);
                 break;
             case 4:
@@ -112,7 +113,7 @@ void stworz_gatunek(char *tab) {
             tmp->nast = nowy;
             nowy->nast = NULL;
         }
-        strcpy(nowy->nazwa, tab);
+        strncpy(nowy->nazwa, tab, MAX);
         nowy->id = id_max_gatunek(poczatek)+1;
     }
     return;
@@ -161,10 +162,11 @@ void edytuj_gatunek(int id_gat_do_edyc) {
             return;
         }
     }
+    char c;
     char wejscie[MAX];
     puts("Podaj nowa nazwe gatunku ktory edytujesz(pusty wiersz powoduje powrot do menu gatunku):");
-    if (fgets(wejscie,MAX,stdin) != NULL && wejscie[0] != '\0' && wejscie[0] != '\t' && wejscie[0] != ' ' && wejscie[0] != '\n') {
-        strcpy(biezacy->nazwa, wejscie);
+    if (gets(wejscie) != NULL && wejscie[0] != '\0' && wejscie[0] != '\t' && wejscie[0] != ' ' && wejscie[0] != '\n') {
+        strncpy(biezacy->nazwa, wejscie, MAX);        
     	puts("\nZaktualizowano dane\n");
 	}
 };
@@ -181,7 +183,7 @@ int dodaj_gatunek_do_gry(int id_gatunku, struct gra *nowy) {
             return 0;
         }
     }
-    strcpy(nowy->gatunek,biezacy->nazwa);
+    strncpy(nowy->gatunek,biezacy->nazwa, MAX);
 
 }
 
